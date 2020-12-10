@@ -1,20 +1,8 @@
-import Vue from "vue";
+import { createApp } from "vue";
+import { CalciteComponentsVue } from "@esri/calcite-components-vue/dist/index";
+
 import App from "./App.vue";
-import {
-  applyPolyfills,
-  defineCustomElements
-} from "@esri/calcite-components/dist/loader";
 
-// Apply polyfills and then define the custom elements
-// polyfills are not needed if you don't support IE11 or Edge
-applyPolyfills().then(() => {
-  defineCustomElements(window);
-});
+const app = createApp(App).use(CalciteComponentsVue);
 
-// tell Vue.js to ignore Calcite Components
-Vue.config.ignoredElements = [/calcite-\w*/];
-Vue.config.productionTip = false;
-
-new Vue({
-  render: h => h(App)
-}).$mount("#app");
+app.mount("#app");

@@ -5,7 +5,7 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
 // Import Calcite Components
-import { defineCustomElements } from '@esri/calcite-components/dist/loader';
+// import { defineCustomElements } from '@esri/calcite-components/dist/loader';
 
 if (environment.production) {
   enableProdMode();
@@ -16,4 +16,4 @@ platformBrowserDynamic()
   .catch((err) => console.error(err));
 
 // Register Calcite Components
-defineCustomElements(window);
+// defineCustomElements(window);
